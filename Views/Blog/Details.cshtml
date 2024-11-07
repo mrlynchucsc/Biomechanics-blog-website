@@ -1,5 +1,8 @@
 @model MyMvcApp.Models.BlogPost
 
 <h2>@Model.Title</h2>
-<p>@Model.DatePublished.ToString("MMMM dd, yyyy")</p>
+<p><strong>Published on:</strong> @Model.DatePublished.ToString("MMMM dd, yyyy")</p>
 <p>@Model.Content</p>
+
+<a asp-action="Index" a>Back to Posts</a>
+

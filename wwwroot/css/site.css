@@ -20,3 +20,17 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* wwwroot/css/site.css */
+body.lavender-background {
+  background-color: rgb(250, 225, 255);
+  min-height: 100vh; /* Ensures the background color covers the full viewport height */
+  margin: 0;
+  width: 100%;
+  padding: 20px; /* Adds some padding for spacing */
+}
+
+.purple-background {
+  background-color: rgb(127, 33, 146);
+
+}

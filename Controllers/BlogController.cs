@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MyMvcApp.Data;
 using MyMvcApp.Models;
+using System.Linq;
 
 namespace MyMvcApp.Controllers
 {
@@ -37,6 +38,17 @@ namespace MyMvcApp.Controllers
                 _context.Add(post);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
+            }
+            return View(post);
+        }
+
+        // GET: /Blog/Details/{id}
+        public IActionResult Details(int id)
+        {
+            var post = _context.BlogPosts.FirstOrDefault(p => p.Id == id);
+            if (post == null)
+            {
+                return NotFound();
             }
             return View(post);
         }

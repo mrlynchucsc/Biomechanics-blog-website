@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MyMvcApp.Models.BlogPost>
+
+<h2>Blog Posts</h2>
+<a asp-controller="Blog" asp-action="Create" class="btn btn-primary">Create New Post</a>
+
+@foreach (var post in Model)
+{
+    <div>
+        <h3>@post.Title</h3>
+        <p>@post.DatePublished.ToString("MMMM dd, yyyy")</p>
+        <a href="/Blog/Details/@post.Id">Read More</a>
+    </div>
+}

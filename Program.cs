@@ -26,10 +26,18 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+app.Use(async (context, next) =>
+{
+    Console.WriteLine($"Requested URL: {context.Request.Path}");
+    await next.Invoke();
+});
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+    
+app.UseAuthorization();
+
+
 
 app.Run();
